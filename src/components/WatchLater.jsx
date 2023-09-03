@@ -21,11 +21,8 @@ const WatchLater = () => {
         };
         axios.get(apiUrl, { headers })
             .then(response => {
-                console.log('linee 65', response.status);
                 if (response.status === 200) {
                     setApiData(response.data.data.shows)
-                    console.log(apiData);
-                    console.log('liked videos');
                 } else {
                     console.log(`Request failed with status code: ${response.status}`);
                 }
@@ -33,7 +30,6 @@ const WatchLater = () => {
             .catch(error => {
                 console.error('An error occurred:', error);
             });
-        console.log('likedvideos', apiData);
     }, [])
 
     return (

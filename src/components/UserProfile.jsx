@@ -2,7 +2,6 @@ import { Avatar, Box, Button, Divider, Link, List, ListItem, ListItemAvatar, Lis
 import React from 'react'
 import { FaLanguage, FaRegSun, FaUserCircle } from 'react-icons/fa'
 import { inlineText } from '../styles/styles'
-// import { userProfileItems } from '../data/app.data.jsx'
 import UseToggle from '../hooks/UseToggle'
 import { GrChannel } from 'react-icons/gr'
 import { SiReasonstudios } from 'react-icons/si'
@@ -21,12 +20,9 @@ const UserProfile = ({ setAuth }) => {
     const { el, open, handleClick, handleClose } = UseToggle()
     const name = JSON.parse(localStorage.getItem('user-info')).data.name
     const firstLetter = name.charAt(0)
-    // console.log(first);
-    // console.log(name);
     return (
         <Box sx={{ px: 1 }}>
             <Button id='basic-button' onClick={handleClick}>
-                {/* <FaUserCircle size={24} /> */}
                 <Avatar sx={{ bgcolor: 'gray', width: 30, height: 30, alignItems: "center", justifyContent: 'center' }}>{firstLetter}</Avatar>
             </Button>
             <Menu
@@ -53,11 +49,8 @@ const UserProfile = ({ setAuth }) => {
                 </ListItem>
                 <Box sx={{ minWidth: 300, borderTop: '1px solid #ddd' }}>
                     {
-                        // userProfileItems.map(item => {
-                        // return (
                         <List sx={{ p: 0 }} >
                             {<>
-
                                 <ListItem disablePadding>
                                     <ListItemButton>
                                         <ListItemIcon><GrChannel size={24} /></ListItemIcon>
@@ -110,12 +103,9 @@ const UserProfile = ({ setAuth }) => {
                                     </ListItemButton>
                                 </ListItem>
                             </>
-                                // )
                             }
                         </List>
-                        // )
                     }
-                    {/* } */}
                 </Box>
             </Menu>
         </Box>

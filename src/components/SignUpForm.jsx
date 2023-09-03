@@ -40,14 +40,12 @@ export default function SignUpForm({ setShowSignin }) {
         })
             .then((res) => res.json())
             .then((response) => {
-                console.log(response);
                 if (response.status == 'success') {
                     setShowSignin(true)
                 }
                 else {
                     alert('Something went very wrong')
                 }
-                // localStorage.setItem('user-info', JSON.stringify(response))
             })
 
     };
@@ -120,7 +118,6 @@ export default function SignUpForm({ setShowSignin }) {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            // onClick={signup}
                             sx={{ mt: 3, mb: 2, backgroundColor: '#E31212' }}
                         >
                             Sign Up

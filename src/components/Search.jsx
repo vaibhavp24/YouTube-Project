@@ -14,7 +14,6 @@ const Search = () => {
         e.preventDefault();
         if (searchTerm) {
             navigate(`/search/${searchTerm}`);
-            console.log(searchTerm);
             setSearchTerm('');
         }
     };
@@ -27,7 +26,6 @@ const Search = () => {
                     type='button'
                     sx={{
                         backgroundColor: '#eee',
-                        // borderRadius: 0
                         borderTopLeftRadius: 5,
                         borderBottomLeftRadius: 5
                     }}

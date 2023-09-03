@@ -18,9 +18,7 @@ const Feed = ({ setAuth, isOpen }) => {
     };
     axios.get(apiUrl, { headers })
       .then(response => {
-        console.log('line 65', response);
         if (response.status === 200) {
-          // console.log('vid ',response.data.data[0]);
           setApiData(response.data.data)
         } else {
           console.log(`Request failed with status code: ${response.status}`);
@@ -29,9 +27,7 @@ const Feed = ({ setAuth, isOpen }) => {
       .catch(error => {
         console.error('An error occurred:', error);
       });
-    console.log(apiData.length);
   }, []);
-  console.log(apiData);
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
@@ -45,10 +41,6 @@ const Feed = ({ setAuth, isOpen }) => {
       </Box>
 
       <Box sx={{ pt: { xs: 0, md: 10, lg: 10 }, overflowY: "auto", height: "90vh", flex: 2 }}>
-        {/* <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>
-          {selectedCategory} <span style={{ color: "#FC1503" }}></span>
-        </Typography> */}
-        {/* 01.50.30 */}
         <Videos apiData={apiData} />
       </Box>
     </Stack>

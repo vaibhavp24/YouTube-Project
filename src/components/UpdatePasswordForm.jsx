@@ -29,10 +29,8 @@ export default function UpdatePasswordForm() {
             password: data.get('newpassword'),
             appType: "ott",
         };
-        // console.log('details', details);
         let result = ''
         let token = JSON.parse(localStorage.getItem('user-info')).token
-        console.log(token);
         fetch('https://academics.newtonschool.co/api/v1/user/updateMyPassword', {
             method: 'PATCH',
             headers: {
@@ -46,11 +44,8 @@ export default function UpdatePasswordForm() {
         })
             .then((res) => res.json())
             .then((response) => {
-                // console.log(token);
                 result = response.status
-                // localStorage.setItem('password', JSON.stringify(response))
                 if (result == 'success') {
-                    console.log('success');
                     alert('Your Password has been Changed Successfully...!!!')
                     navigate('/')
                 }

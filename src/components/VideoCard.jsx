@@ -7,7 +7,6 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 const VideoCard = ({ video }) => {
     const image = video.thumbnail
     const videoId = video._id
-    const videoUrl = video.video_url
     const title = video.title
     const description = video.description
 

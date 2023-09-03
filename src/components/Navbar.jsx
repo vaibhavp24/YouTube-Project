@@ -24,20 +24,15 @@ const Navbar = ({ setAuth, handleDrawerToggle }) => {
                             onClick={handleDrawerToggle}
                             sx={{ mr: 2 }}
                         >
-                            {/* <MenuIcon /> */}
                         </IconButton>
-                        {/* <img src={logo} height='33vh' alt="React Logo" /> */}
                         <Box display={flex} onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
                             <AiFillYoutube icon="fa-brands fa-youtube" size='5vh' style={{ color: "#ff0000", }} />
                             <Typography fontFamily={'sans-serif'} variant='h6' component="div" sx={{ fontSize: 22, ml: 1, fontFamily: 'Oswald', cursor: 'pointer' }}>
                                 YouTube
-                                {/* Roboto, Arial, sans-serif; */}
                             </Typography>
                         </Box>
                     </Box>
                     <Box sx={hideOnMobile}>
-                        {/* <Search /> */}
-                        {/* <SearchBar /> */}
                         <Search />
                     </Box>
                     <Box justifyContent='center' sx={hideOnMobile}>

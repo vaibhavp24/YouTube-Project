@@ -20,7 +20,6 @@ const SearchFeed = () => {
     };
     axios.get(apiUrl, { headers })
       .then(response => {
-        console.log('line 65', response);
         if (response.status === 200) {
           setApiData(response.data.data)
         } else {
@@ -30,16 +29,13 @@ const SearchFeed = () => {
       .catch(error => {
         console.error('An error occurred:', error);
       });
-    console.log(apiData);
   }, []);
-  console.log(apiData);
 
   return (
     <Box pt={10} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
       <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>
         <span style={{ color: "#FC1503" }}>Search Results for: {searchTerm} Videos</span>
       </Typography>
-      {/* 01.50.30 */}
       <Videos apiData={apiData} />
     </Box>
   );
