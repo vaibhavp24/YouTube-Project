@@ -18,7 +18,7 @@ import { useState } from 'react';
 
 const defaultTheme = createTheme();
 
-export default function SignInForm({setAuth, setShowSignin }) {
+export default function SignInForm({ setAuth, setShowSignin }) {
     const [name1, setName1] = useState('')
     const [password1, setPassword1] = useState('')
     let details = {}
@@ -45,6 +45,7 @@ export default function SignInForm({setAuth, setShowSignin }) {
                 result = response.status
                 if (result == 'success') {
                     localStorage.setItem('user-info', JSON.stringify(response))
+                    setAuth(true)
                 }
             })
     };

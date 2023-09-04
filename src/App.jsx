@@ -7,7 +7,7 @@ import ProfilePage from './components/ProfilePage'
 function App() {
   const [auth, setAuth] = useState(false)
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem('user-info'))) {
+    if (localStorage.getItem('user-info')) {
       setAuth(true)
     }
     else {
@@ -18,8 +18,7 @@ function App() {
   return (
     <>
       {auth ? (
-        <CallHomePage setAuth={setAuth} />
-        // <ProfilePage/>
+        <CallHomePage auth={auth} setAuth={setAuth} />
       ) : (
         <SwitchBetween setAuth={setAuth} />
       )}

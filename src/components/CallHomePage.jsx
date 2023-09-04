@@ -9,17 +9,19 @@ import SearchFeed from "./SearchFeed"
 import { appWrapper } from "../styles/styles"
 import UpdatePasswordForm from "./UpdatePasswordForm"
 import Subscription from "./Subscription"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ProfilePage from "./ProfilePage"
 
 
-const CallHomePage = ({ setAuth }) => {
-    if (localStorage.getItem('user-info')) {
-        setAuth(true)
-    }
-    else {
-        setAuth(false)
-    }
+const CallHomePage = ({ auth, setAuth }) => {
+    useEffect(() => {
+        if (localStorage.getItem('user-info')) {
+            setAuth(true)
+        }
+        else {
+            setAuth(false)
+        }
+    }, [auth])
 
     const [mobileOpen, setMobileOpen] = useState(false)
 
