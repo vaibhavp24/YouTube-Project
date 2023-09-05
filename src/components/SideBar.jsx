@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from "@mui/material";
-import { MdExitToApp, MdHistory, MdHome, MdLibraryBooks, MdThumbUp } from 'react-icons/md'
+import { MdExitToApp, MdHistory, MdLockReset, MdHome, MdLibraryBooks, MdThumbUp } from 'react-icons/md'
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -24,40 +24,41 @@ const SideBar = ({ setAuth, isOpen }) => {
                 overflowY: "auto",
                 height: { sx: "auto", md: "95%" },
                 flexDirection: { md: "column" },
+                margin:'-1vh'
             }}
         >
             <List sx={{ p: 0 }}>
                 <ListItem disablePadding>
                     <ListItemButton>
-                        <ListItemIcon><MdHome size={23} /></ListItemIcon>
-                        <ListItemText>HOME</ListItemText>
+                        <ListItemIcon><MdHome color="white" size={23} /></ListItemIcon>
+                        <ListItemText>Home</ListItemText>
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton onClick={() => navigate('/subscription')}>
-                        <ListItemIcon><MdHome size={23} /></ListItemIcon>
-                        <ListItemText>SUBSCRIPTION</ListItemText>
+                        <ListItemIcon><MdHome color="white" size={23} /></ListItemIcon>
+                        <ListItemText>Subscription</ListItemText>
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     {/* <Link to={LikedVideos ? `/watchlater` : 'loading...'}> */}
                     <ListItemButton onClick={() => navigate('/liked')}>
-                        <ListItemIcon><MdThumbUp size={23} /></ListItemIcon>
+                        <ListItemIcon><MdThumbUp color="white" size={23} /></ListItemIcon>
                         <ListItemText>Liked Videos</ListItemText>
                     </ListItemButton>
                     {/* </Link> */}
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton>
-                        <ListItemIcon><MdHistory size={23} /></ListItemIcon>
-                        <ListItemText>HISTORY</ListItemText>
+                        <ListItemIcon><MdHistory color="white" size={23} /></ListItemIcon>
+                        <ListItemText>History</ListItemText>
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     {/* <Link to={'/updatepass'}> */}
                     <ListItemButton onClick={() => navigate('/updatepass')}>
-                        <ListItemIcon><LockResetIcon size={23} /></ListItemIcon>
-                        <ListItemText>UPDATE PASSWORD</ListItemText>
+                        <ListItemIcon><MdLockReset color="white" size={23} /></ListItemIcon>
+                        <ListItemText>Update Password</ListItemText>
                     </ListItemButton>
                     {/* </Link> */}
                 </ListItem>
@@ -65,8 +66,8 @@ const SideBar = ({ setAuth, isOpen }) => {
                     <ListItemButton
                         onClick={removeItem}
                     >
-                        <ListItemIcon><MdExitToApp size={23} /></ListItemIcon>
-                        <ListItemText>LOGOUT</ListItemText>
+                        <ListItemIcon><MdExitToApp color="white" size={23} /></ListItemIcon>
+                        <ListItemText>Log-Out</ListItemText>
                     </ListItemButton>
                 </ListItem>
             </List>

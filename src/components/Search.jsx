@@ -21,11 +21,11 @@ const Search = () => {
     return (
         <Box sx={flexAlignCenter}>
             <Paper component="form" sx={searchBar} onSubmit={handleSubmit}>
-                <InputBase value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} sx={{ ml: 1, flex: 1, pl: 1 }} placeholder='Search' />
+                <InputBase value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} sx={{ ml: 1, flex: 1, pl: 1, color:'white' }} placeholder='Search' />
                 <IconButton
                     type='button'
                     sx={{
-                        backgroundColor: '#eee',
+                        backgroundColor: 'gray',
                         borderTopLeftRadius: 5,
                         borderBottomLeftRadius: 5
                     }}

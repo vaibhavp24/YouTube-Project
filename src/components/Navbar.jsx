@@ -25,8 +25,9 @@ const Navbar = ({ setAuth, handleDrawerToggle }) => {
                             sx={{ mr: 2 }}
                         >
                         </IconButton>
-                        <Box display={flex} onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
-                            <AiFillYoutube icon="fa-brands fa-youtube" size='5vh' style={{ color: "#ff0000", }} />
+                        <Box display={flex} onClick={() => navigate('/')} sx={{ cursor: 'pointer', alignItems: 'center' }}>
+                            {/* <AiFillYoutube icon="fa-brands fa-youtube" size='5vh' style={{ color: "#ff0000", }} /> */}
+                            <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='28vh' width='35vh' />
                             <Typography fontFamily={'sans-serif'} variant='h6' component="div" sx={{ fontSize: 22, ml: 1, fontFamily: 'Oswald', cursor: 'pointer' }}>
                                 YouTube
                             </Typography>

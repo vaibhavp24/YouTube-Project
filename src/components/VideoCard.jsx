@@ -11,19 +11,19 @@ const VideoCard = ({ video }) => {
     const description = video.description
 
     return (
-        <Card sx={{ width: { md: '390px', xs: '100%' }, boxShadow: 'none', borderRadius: 'none' }}>
+        <Card sx={{ width: { md: '390px', xs: '100%' },backgroundColor:'black', boxShadow: 'none', borderRadius: 'none' }}>
             <Link to={videoId ? `/video/${videoId}` : image}>
                 <CardMedia
                     image={image}
                     alt={title}
-                    sx={{ width: 360, height: 200 }}
+                    sx={{ width: 360, height: 200,backgroundColor:'black' }}
                 />
-                <CardContent sx={{ backgroundColor: '#fff', scrollbarWidth: 'none', height: '100px' }} >
+                <CardContent sx={{ color: '#fff', scrollbarWidth: 'none', height: '100px' }} >
                     <Link to={videoId ? `/video/${videoId}` : image}>
-                        <Typography variant='subtitle1' fontWeight='bold' color='#1e1e1e' >
+                        <Typography variant='subtitle1' fontWeight='bold' color='#fff' >
                             {title.slice(0, 25)}
                         </Typography>
-                        <Typography variant='subtitle2' color='gray' sx={{ textDecoration: 'none' }}>
+                        <Typography variant='subtitle2' color='#fff' sx={{ textDecoration: 'none' }}>
                             {description.slice(0, 25)}
                             <CheckCircleIcon sx={{ fontSize: 15, color: 'gray', ml: '5px' }} />
                         </Typography>

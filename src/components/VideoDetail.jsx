@@ -13,7 +13,7 @@ const VideoDetail = () => {
 
   const [showCardlist, setShowCardlist] = useState(true)
   let [videourl, setVideourl] = useState('')
-  let [iconColor, setIconColor] = useState('black');
+  let [iconColor, setIconColor] = useState('white');
   const [likeVideoData, setLikeVideoData] = useState([])
 
   const location = useLocation()
@@ -62,7 +62,7 @@ const VideoDetail = () => {
   }
 
   const handleClick = () => {
-    const newColor = iconColor === 'black' ? 'blue' : 'black';
+    const newColor = iconColor === 'white' ? 'blue' : 'white';
     likeVideo()
     setIconColor(newColor);
   }
@@ -72,13 +72,12 @@ const VideoDetail = () => {
     <Box minHeight='95vh'>
       <Stack direction={{ xs: 'column', md: 'row' }}>
         <Box flex={1} pt='12%' width='25%' pl='65%' justifyContent='center' >
-          <Box sx={{ width: '100%', position: 'sticky', top: '86px' }}>
+          <Box sx={{ width: '100%',  position: 'sticky', top: '86px' }}>
             <ReactPlayer playing='true' controls url={videourl.video_url} />
-            <Typography color='#1e1e1e' variant='h5' fontWeight='bold'>
+            <Typography color='#fff' variant='h5' fontWeight='bold'>
               {videourl.title}
             </Typography>
-            <Typography color='#1e1e1e' variant='body2' fontWeight='bold'>
-            </Typography>
+            
             <Stack direction='row' justifyContent='space-between'>
               <Typography variant='body1' sx={{ opacity: 0.7 }} color={iconColor}>
                 <ThumbUpIcon sx={{ cursor: 'pointer' }} onClick={() => handleClick()} />

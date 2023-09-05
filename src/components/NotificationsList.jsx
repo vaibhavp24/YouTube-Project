@@ -25,7 +25,7 @@ const NotificationsList = () => {
                     {notificationData.map(item => {
                         return (
                             <Link href={item.url} key={item.id} underline='none'>
-                                <ListItem sx={{ pt: 0, pb: 1, mt: 1 }} alignItems='flex-start'>
+                                <ListItem sx={{ pt: 0, pb: 1, mt: '1' }} alignItems='flex-start'>
                                     <ListItemAvatar>
                                         <Avatar alt={item.alt} src={item.avatar} />
                                     </ListItemAvatar>

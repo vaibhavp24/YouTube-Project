@@ -34,8 +34,8 @@ const WatchLater = () => {
 
     return (
         <>
-            <Typography p='12vh 0' variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>
-                <span style={{ color: "#101010" }}>Watch Later Videos</span>
+            <Typography p='12vh 2vh' variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>
+                <span style={{ color: "#fff" }}>Watch Later Videos</span>
                 <Box p='3vh'>
                     <Videos apiData={apiData} />
                 </Box>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
+import { Box } from '@mui/material';
 
 const SwitchBetween = ({ setAuth }) => {
     const [showSignin, setShowSignin] = useState(true);
@@ -10,11 +11,11 @@ const SwitchBetween = ({ setAuth }) => {
     };
 
     return (
-        <div>
+        <Box>
 
             {showSignin ? <SignInForm setAuth={setAuth} setShowSignin={setShowSignin} /> : <SignUpForm setAuth={setAuth} setShowSignin={setShowSignin} />}
 
-        </div>
+        </Box>
     );
 };
 

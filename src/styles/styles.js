@@ -7,6 +7,9 @@ export const appWrapper = {
     display: 'flex',
     height: '100vh',
     overflow: 'hidden',
+    backgroundColor: '#110E12',
+    color: 'white',
+    marginLeft: '-2vh',
 };
 /***********************
  * Navigation
@@ -20,11 +23,12 @@ export const searchBar = {
     border: '1px solid #ccc',
     borderRadius: 5,
     mr: 1,
+    backgroundColor:'black'
 };
 
 export const appBar = {
-    backgroundColor: 'white',
-    color: '#000',
+    backgroundColor: 'black',
+    color: 'white',
 };
 
 export const toolbarWrapper = {
@@ -67,8 +71,12 @@ export const shortsHeader = { ml: 1, fontSize: 20, fontWeight: 'bold' };
  ************************/
 export const notificationWrapper = {
     width: '100%',
-    maxWidth: 360,
-    pb: 0,
+    maxWidth: 380,
+    p: 0,
+    m: '-2vh 0vh',
+    mt: '-2vh',
+    color: 'white',
+    backgroundColor: 'black'
 };
 
 /***********************
@@ -112,7 +120,7 @@ export const flexColumnCenter = {
     justifyContent: 'center',
 };
 
-export const inlineText = { display: 'inline', fontSize: 12 };
+export const inlineText = { display: 'inline', fontSize: 12, color: 'white' };
 
 export const flex = { display: 'flex' };
 

@@ -36,7 +36,8 @@ export default function Subscription() {
                     }}
                 >
                     <Box display='flex' flexDirection='row' alignItems='center'>
-                        <AiFillYoutube icon="fa-brands fa-youtube" size='9vh' style={{ color: "#ff0000", }} />
+                        {/* <AiFillYoutube icon="fa-brands fa-youtube" size='9vh' style={{ color: "#ff0000", }} /> */}
+                        <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='50vh'  />
                         <Typography fontWeight={800} fontFamily='Arial Narrow' variant="h4" alignItems='center' >
                             YouTube Premium
                         </Typography>

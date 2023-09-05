@@ -68,9 +68,14 @@ export default function UpdatePasswordForm() {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
+                        backgroundColor:'#e6f3ff',
+                        // margin:'2px'
+                        padding:'20px',
+                        border:'2px dark solid',
+                        borderRadius:'4px'
                     }}
                 >
-                    <Typography component="h1" variant="h5">
+                    <Typography component="h1" variant="h5" color='black'>
                         YouTube Update Password
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
@@ -83,6 +88,7 @@ export default function UpdatePasswordForm() {
                             name="name"
                             autoComplete="name"
                             autoFocus
+                            backgroundColor="white"
                         />
                         <TextField
                             margin="normal"
@@ -92,6 +98,7 @@ export default function UpdatePasswordForm() {
                             label="Email Address"
                             name="email"
                             autoComplete="email"
+                            
                         />
                         <TextField
                             margin="normal"

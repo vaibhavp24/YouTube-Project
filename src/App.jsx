@@ -3,6 +3,7 @@ import CallHomePage from './components/CallHomePage'
 import SwitchBetween from './components/SwitchBetween'
 import { useEffect } from 'react'
 import ProfilePage from './components/ProfilePage'
+import { Box } from '@mui/material'
 
 function App() {
   const [auth, setAuth] = useState(false)
@@ -16,13 +17,13 @@ function App() {
   }, [auth])
 
   return (
-    <>
+    <Box>
       {auth ? (
         <CallHomePage auth={auth} setAuth={setAuth} />
       ) : (
         <SwitchBetween setAuth={setAuth} />
       )}
-    </>
+    </Box>
   )
 }
 
