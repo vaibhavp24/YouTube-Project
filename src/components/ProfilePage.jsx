@@ -17,10 +17,11 @@ import { flex } from '../styles/styles';
 
 const defaultTheme = createTheme();
 
+/* UserProfile component is made to show the user details i.e name and email id */
+
 export default function ProfilePage() {
     const email = JSON.parse(localStorage.getItem('user-info')).data.email
     const name = JSON.parse(localStorage.getItem('user-info')).data.name
-
 
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -34,7 +35,8 @@ export default function ProfilePage() {
                         alignItems: 'center',
                     }}
                 >
-                    <AiFillYoutube icon="fa-brands fa-youtube" size='9vh' style={{ color: "#ff0000", }} />
+                    {/* <AiFillYoutube icon="fa-brands fa-youtube" size='9vh' style={{ color: "#ff0000", }} /> */}
+                    <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='120vh' width='120vh' />
                     <Typography component="h1" variant="h5">
                         YouTube Profile Page
                     </Typography>

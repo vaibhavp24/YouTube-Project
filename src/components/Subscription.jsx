@@ -1,27 +1,18 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AiFillYoutube } from 'react-icons/ai'
-import { useEffect } from 'react';
-import { useState } from 'react';
 
 const defaultTheme = createTheme();
 
 export default function Subscription() {
-    const [name1, setName1] = useState('')
-    const [password1, setPassword1] = useState('')
-    let details = {}
+
+    /* this is just a subscription page 
+     this page does not contains any functionalities */
 
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -36,8 +27,7 @@ export default function Subscription() {
                     }}
                 >
                     <Box display='flex' flexDirection='row' alignItems='center'>
-                        {/* <AiFillYoutube icon="fa-brands fa-youtube" size='9vh' style={{ color: "#ff0000", }} /> */}
-                        <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='50vh'  />
+                        <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='50vh' />
                         <Typography fontWeight={800} fontFamily='Arial Narrow' variant="h4" alignItems='center' >
                             YouTube Premium
                         </Typography>

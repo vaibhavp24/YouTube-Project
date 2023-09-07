@@ -15,15 +15,21 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AiFillYoutube } from 'react-icons/ai'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Alert from '@mui/material/Alert';
 
 const defaultTheme = createTheme();
+
+/* From this component user can signin to the home page
+after signup or if the user already have account */
 
 export default function SignInForm({ setAuth, setShowSignin }) {
     const [name1, setName1] = useState('')
     const [password1, setPassword1] = useState('')
+    const [error, setError] = useState(false)
     let details = {}
     const handleSubmit = (event) => {
         event.preventDefault();
+        // getting values of email and password from the input type
         const data = new FormData(event.currentTarget);
         details = {
             email: data.get('email'),
@@ -31,6 +37,7 @@ export default function SignInForm({ setAuth, setShowSignin }) {
             appType: "ott",
         };
         let result = ''
+        // fetching from the api with POST method
         fetch('https://academics.newtonschool.co/api/v1/user/login', {
             method: 'POST',
             headers: {
@@ -44,8 +51,11 @@ export default function SignInForm({ setAuth, setShowSignin }) {
             .then((response) => {
                 result = response.status
                 if (result == 'success') {
+                    setError(false)
                     localStorage.setItem('user-info', JSON.stringify(response))
                     setAuth(true)
+                } else {
+                    setError(true)
                 }
             })
     };
@@ -74,6 +84,7 @@ export default function SignInForm({ setAuth, setShowSignin }) {
                             id="email"
                             label="Email Address"
                             name="email"
+                            type='email'
                             onChange={(e) => setName1(e.target.value)}
                             autoComplete="email"
                             autoFocus
@@ -106,6 +117,10 @@ export default function SignInForm({ setAuth, setShowSignin }) {
                             </Grid>
                         </Grid>
                     </Box>
+                    {/* if email or password is not correct then this Alert will be shown */}
+                    {error &&
+                        <Alert severity="error">Email Id or Password is Incorrect !!!</Alert>
+                    }
                 </Box>
             </Container>
         </ThemeProvider>

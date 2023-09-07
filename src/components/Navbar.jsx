@@ -10,35 +10,35 @@ import NotificationsList from './NotificationsList'
 import UserProfile from './UserProfile'
 import { useNavigate } from 'react-router-dom'
 
-const Navbar = ({ setAuth, handleDrawerToggle }) => {
+/* All the functionalities present in the navbar are described in Navbar component */
+
+const Navbar = ({ setAuth }) => {
     const navigate = useNavigate()
     return (
         <AppBar component='nav' sx={appBar}>
             <Toolbar>
                 <Box sx={toolbarWrapper}>
                     <Box sx={flexAlignCenter}>
-                        <IconButton
-                            color='inherit'
-                            aria-label='open drawer'
-                            edge='start'
-                            onClick={handleDrawerToggle}
-                            sx={{ mr: 2 }}
-                        >
-                        </IconButton>
                         <Box display={flex} onClick={() => navigate('/')} sx={{ cursor: 'pointer', alignItems: 'center' }}>
-                            {/* <AiFillYoutube icon="fa-brands fa-youtube" size='5vh' style={{ color: "#ff0000", }} /> */}
+                            {/* Youtube logo */}
                             <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='28vh' width='35vh' />
                             <Typography fontFamily={'sans-serif'} variant='h6' component="div" sx={{ fontSize: 22, ml: 1, fontFamily: 'Oswald', cursor: 'pointer' }}>
                                 YouTube
                             </Typography>
                         </Box>
                     </Box>
-                    <Box sx={hideOnMobile}>
+                    <Box sx={{ width: '40%' }}>
+                        {/* Search Bar */}
                         <Search />
                     </Box>
                     <Box justifyContent='center' sx={hideOnMobile}>
+                        {/* here Upload , NotificationList and UserProfile components are made to look this as original Youtube website 
+                        and were not mentioned in the guidelines */}
+                        {/* Upload video section */}
                         <Upload />
+                        {/* NotificationList */}
                         <NotificationsList />
+                        {/* UserProfile  */}
                         <UserProfile setAuth={setAuth} />
                     </Box>
                 </Box>

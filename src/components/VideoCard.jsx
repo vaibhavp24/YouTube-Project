@@ -4,6 +4,11 @@ import { BsCheckCircle } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
+/* this component is made to design each video card
+ in each card there is thumbnail , title and description
+ if the user clicks on any of the card it will redirect 
+ to watch that particular video */
+
 const VideoCard = ({ video }) => {
     const image = video.thumbnail
     const videoId = video._id
@@ -11,14 +16,14 @@ const VideoCard = ({ video }) => {
     const description = video.description
 
     return (
-        <Card sx={{ width: { md: '390px', xs: '100%' },backgroundColor:'black', boxShadow: 'none', borderRadius: 'none' }}>
+        <Card sx={{ width: { md: '400px', xs: '150%' }, backgroundColor: 'black', boxShadow: 'none', borderRadius: 'none' }}>
             <Link to={videoId ? `/video/${videoId}` : image}>
                 <CardMedia
                     image={image}
                     alt={title}
-                    sx={{ width: 360, height: 200,backgroundColor:'black' }}
+                    sx={{ width: '100%', height: 200, backgroundColor: 'black' }}
                 />
-                <CardContent sx={{ color: '#fff', scrollbarWidth: 'none', height: '100px' }} >
+                <CardContent sx={{ color: '#fff', scrollbarWidth: 'none', height: '10vh' }} >
                     <Link to={videoId ? `/video/${videoId}` : image}>
                         <Typography variant='subtitle1' fontWeight='bold' color='#fff' >
                             {title.slice(0, 25)}

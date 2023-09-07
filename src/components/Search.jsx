@@ -1,27 +1,39 @@
-import { Box, Button, IconButton, InputBase, Paper } from '@mui/material'
+import { Box, Button, FormControl, IconButton, InputBase, InputLabel, MenuItem, Paper, Select, Typography } from '@mui/material'
 import React from 'react'
-import { BsFillMicFill } from "react-icons/bs";
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { flexAlignCenter, searchBar } from '../styles/styles';
 
+
+// Search Component is made to set the search term and type of 
+// field for filtering the videos while searching
+
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
 
+    /* after getting searching term and field navigating to filtered videos */
     const handleSubmit = (e) => {
         e.preventDefault();
         if (searchTerm) {
-            navigate(`/search/${searchTerm}`);
+            navigate(`/search/${field}/${searchTerm}`);
             setSearchTerm('');
         }
+    };
+
+
+    const [field, setField] = useState('type');
+
+    const handleChange = (event) => {
+        setField(event.target.value);
     };
 
     return (
         <Box sx={flexAlignCenter}>
             <Paper component="form" sx={searchBar} onSubmit={handleSubmit}>
-                <InputBase value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} sx={{ ml: 1, flex: 1, pl: 1, color:'white' }} placeholder='Search' />
+                {/* setting searching term on input type */}
+                <InputBase value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} sx={{ ml: 1, flex: 1, pl: 1, color: 'white' }} placeholder='Search' />
                 <IconButton
                     type='button'
                     sx={{
@@ -35,9 +47,23 @@ const Search = () => {
                     <SearchIcon />
                 </IconButton >
             </Paper>
-            <Button sx={{ minWidth: 'auto' }} >
-                <BsFillMicFill size={20} />
-            </Button>
+            <Box display={'flex'} gap={1} alignItems='center'>
+                <Typography>Filter By</Typography>
+                {/* dropdown for selecting field */}
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={field}
+                    sx={{ height: '30px', width: '100px', color: 'white', backgroundColor: 'gray' }}
+                    label="Age"
+                    onChange={handleChange}
+                >
+                    <MenuItem value={'type'}>Type</MenuItem>
+                    <MenuItem value={'title'}>Title</MenuItem>
+                    <MenuItem value={'keywords'}>Keywords</MenuItem>
+                    <MenuItem value={'cast'}>Cast</MenuItem>
+                </Select>
+            </Box>
         </Box>
     )
 }

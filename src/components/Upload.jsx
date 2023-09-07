@@ -5,6 +5,9 @@ import { Button } from '@mui/base'
 import { uploadMenuItems } from '../data/app.data'
 import { RiVideoUploadFill } from 'react-icons/ri'
 
+/* this component is made just make this page to 
+ look like original website this page does not have any functionalities */
+
 const Upload = () => {
     const { el, open, handleClick, handleClose } = UseToggle()
     return (

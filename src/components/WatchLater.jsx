@@ -5,6 +5,8 @@ import axios from 'axios';
 import Videos from './Videos';
 import { useEffect } from 'react';
 
+/* watchlater component is made to show user's liked videos */
+
 const WatchLater = () => {
 
     const [apiData, setApiData] = useState([]);

@@ -10,6 +10,9 @@ import { MdCardMembership } from 'react-icons/md'
 import { AiOutlineDatabase } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 
+/* this component is made to show avatar with user initial on the navbar
+and a sign out button so the user can sign out from the homepage */
+
 const UserProfile = ({ setAuth }) => {
     const navigate = useNavigate()
     const removeItem = () => {
@@ -52,24 +55,7 @@ const UserProfile = ({ setAuth }) => {
                     {
                         <List sx={{ p: 0 }} >
                             {<>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon ><PiTelevisionSimpleBold color="white" size={24} /></ListItemIcon>
-                                        <ListItemText>Your Channel</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon><SiReasonstudios color='white' size={24} /></ListItemIcon>
-                                        <ListItemText>Youtube Studio</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon><PiTelevisionSimpleBold color='white' size={24} /></ListItemIcon>
-                                        <ListItemText>Switch Account</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
+                               
                                 <ListItem disablePadding>
                                     <ListItemButton onClick={removeItem}>
                                         <ListItemIcon><SiReasonstudios color='white' size={24} /></ListItemIcon>
@@ -77,32 +63,7 @@ const UserProfile = ({ setAuth }) => {
                                     </ListItemButton>
                                 </ListItem>
 
-                                <hr />
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon><MdCardMembership color='white' size={24} /></ListItemIcon>
-                                        <ListItemText>Purchase & Membership</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon><AiOutlineDatabase color='white' size={24} /></ListItemIcon>
-                                        <ListItemText>Your data in Youtube</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                                <hr />
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon><FaRegSun color='white' size={24} /></ListItemIcon>
-                                        <ListItemText>Appearance: Device theme</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon><FaLanguage color='white' size={24} /></ListItemIcon>
-                                        <ListItemText>Language: British English</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
+                                
                             </>
                             }
                         </List>

@@ -5,6 +5,9 @@ import { BsBellFill } from 'react-icons/bs'
 import { inlineText, notificationWrapper } from '../styles/styles'
 import { notificationData } from '../data/app.data'
 
+/* this component is made just make this page to 
+look like original website this page does not have any functionalities */
+
 const NotificationsList = () => {
     const { el, open, handleClick, handleClose } = UseToggle()
     return (

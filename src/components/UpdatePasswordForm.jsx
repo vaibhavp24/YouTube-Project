@@ -17,6 +17,8 @@ import { useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
 
+/* this component is for updating password if the user is already logged-In */
+
 export default function UpdatePasswordForm() {
     const navigate = useNavigate()
     const handleSubmit = (event) => {
@@ -42,6 +44,10 @@ export default function UpdatePasswordForm() {
             body: JSON.stringify(details)
 
         })
+
+            /* if the password changed is successfull then it will 
+            redirect to HomePage */
+
             .then((res) => res.json())
             .then((response) => {
                 result = response.status
@@ -54,8 +60,6 @@ export default function UpdatePasswordForm() {
                     alert(msg)
                 }
             })
-
-
     };
 
     return (
@@ -68,11 +72,10 @@ export default function UpdatePasswordForm() {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        backgroundColor:'#e6f3ff',
-                        // margin:'2px'
-                        padding:'20px',
-                        border:'2px dark solid',
-                        borderRadius:'4px'
+                        backgroundColor: '#e6f3ff',
+                        padding: '20px',
+                        border: '2px dark solid',
+                        borderRadius: '4px'
                     }}
                 >
                     <Typography component="h1" variant="h5" color='black'>
@@ -98,7 +101,7 @@ export default function UpdatePasswordForm() {
                             label="Email Address"
                             name="email"
                             autoComplete="email"
-                            
+
                         />
                         <TextField
                             margin="normal"

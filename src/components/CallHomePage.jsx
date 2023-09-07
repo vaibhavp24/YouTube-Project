@@ -4,7 +4,6 @@ import Navbar from "./Navbar"
 import Feed from "./Feed"
 import VideoDetail from "./VideoDetail"
 import WatchLater from "./WatchLater"
-import ChannelDetail from "./ChannelDetail"
 import SearchFeed from "./SearchFeed"
 import { appWrapper } from "../styles/styles"
 import UpdatePasswordForm from "./UpdatePasswordForm"
@@ -29,24 +28,23 @@ const CallHomePage = ({ auth, setAuth }) => {
         setMobileOpen(e => !e)
     }
 
+    /* this component is use to call the components used for making HomePage
+     with Routing as well */
     return (
-        <>
-            <BrowserRouter>
-                <Box sx={appWrapper}>
-                    <Navbar setAuth={setAuth} handleDrawerToggle={handleDrawerToggle} />
-                    <Routes>
-                        <Route exact path='/' element={<Feed setAuth={setAuth} isOpen={mobileOpen} />} />
-                        <Route path='/video/:id' element={<VideoDetail />} />
-                        <Route path='/liked' element={<WatchLater />} />
-                        <Route path='/subscription' element={<Subscription />} />
-                        <Route path='/updatepass' element={<UpdatePasswordForm />} />
-                        <Route path='/profilepage' element={<ProfilePage />} />
-                        <Route path='/channel/:id' element={<ChannelDetail />} />
-                        <Route path='/search/:searchTerm' element={<SearchFeed />} />
-                    </Routes>
-                </Box>
-            </BrowserRouter>
-        </>
+        <BrowserRouter>
+            <Box sx={appWrapper}>
+                <Navbar setAuth={setAuth} handleDrawerToggle={handleDrawerToggle} />
+                <Routes>
+                    <Route exact path='/' element={<Feed setAuth={setAuth} isOpen={mobileOpen} />} />
+                    <Route path='/video/:id' element={<VideoDetail />} />
+                    <Route path='/liked' element={<WatchLater />} />
+                    <Route path='/subscription' element={<Subscription />} />
+                    <Route path='/updatepass' element={<UpdatePasswordForm />} />
+                    <Route path='/profilepage' element={<ProfilePage />} />
+                    <Route path='/search/:field/:searchTerm' element={<SearchFeed />} />
+                </Routes>
+            </Box>
+        </BrowserRouter>
     )
 }
 
