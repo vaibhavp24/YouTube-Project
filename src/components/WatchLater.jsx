@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Videos from './Videos';
 import { useEffect } from 'react';
+import { watchBox, watchInnerBox } from '../styles/WatchLaterStyle';
 
 /* watchlater component is made to show user's liked videos */
 
@@ -35,14 +36,14 @@ const WatchLater = () => {
     }, [])
 
     return (
-        <>
-            <Typography p='12vh 2vh' variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>
-                <span style={{ color: "#fff" }}>Watch Later Videos</span>
-                <Box p='3vh'>
-                    <Videos apiData={apiData} />
-                </Box>
-            </Typography>
-        </>
+        // <>
+        <Box sx={watchBox}>
+            <Typography variant='h4' pb='-200vh' pl={2} sx={{ color: "#fff" }}>Watch Later Videos</Typography>
+            <Box component='div' sx={watchInnerBox}>
+                <Videos apiData={apiData} />
+            </Box>
+        </Box>
+        // </>
     )
 }
 

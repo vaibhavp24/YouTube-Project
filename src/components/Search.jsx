@@ -4,10 +4,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { flexAlignCenter, searchBar } from '../styles/styles';
+import { iconButton, select } from '../styles/SearchStyle';
 
 
-// Search Component is made to set the search term and type of 
-// field for filtering the videos while searching
+/* Search Component is made to set the search term and type of 
+field for filtering the videos while searching */
 
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -24,7 +25,6 @@ const Search = () => {
 
 
     const [field, setField] = useState('type');
-
     const handleChange = (event) => {
         setField(event.target.value);
     };
@@ -36,25 +36,19 @@ const Search = () => {
                 <InputBase value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} sx={{ ml: 1, flex: 1, pl: 1, color: 'white' }} placeholder='Search' />
                 <IconButton
                     type='button'
-                    sx={{
-                        backgroundColor: 'gray',
-                        borderTopLeftRadius: 5,
-                        borderBottomLeftRadius: 5
-                    }}
+                    sx={iconButton}
                     aria-label='search'
                     onClick={handleSubmit}
                 >
                     <SearchIcon />
                 </IconButton >
             </Paper>
-            <Box display={'flex'} gap={1} alignItems='center'>
+            <Box display={'flex'} gap={1} width='15%' alignItems='center'>
                 <Typography>Filter By</Typography>
                 {/* dropdown for selecting field */}
                 <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
                     value={field}
-                    sx={{ height: '30px', width: '100px', color: 'white', backgroundColor: 'gray' }}
+                    sx={select}
                     label="Age"
                     onChange={handleChange}
                 >

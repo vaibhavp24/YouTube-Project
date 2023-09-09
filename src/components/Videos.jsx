@@ -8,12 +8,16 @@ import VideoCard from './VideoCard';
 /* videos component is used to map the video data into video card */
 const Videos = ({ apiData }) => {
     return (
-        <Box display='flex' columnGap='10px' direction="row" overflow='hidden' flexWrap="wrap" justifyContent="start" alignItems="start" gap={1}>
-            {apiData.map((item, idx) => (
-                <Box key={idx}>
-                    {item._id && <VideoCard video={item} />}
-                </Box>
-            ))}
+        <Box>
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 4 }}>
+                {apiData.map((item, idx) => (
+                    <Grid key={idx} item xs={12} sm={6} md={4} lg={4}>
+                        <Box>
+                            {item._id && <VideoCard video={item} />}
+                        </Box>
+                    </Grid>
+                ))}
+            </Grid>
         </Box>
     )
 }

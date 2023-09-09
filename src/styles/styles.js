@@ -18,12 +18,12 @@ export const appWrapper = {
 export const searchBar = {
     display: 'flex',
     alignItems: 'center',
-    width: 400,
+    width: '40vh',
     boxShadow: 0,
     border: '1px solid #ccc',
     borderRadius: 5,
     mr: 1,
-    backgroundColor:'black'
+    backgroundColor: 'black'
 };
 
 export const appBar = {
@@ -106,6 +106,7 @@ export const appContentWrapper = {
 export const flexAlignCenter = {
     display: 'flex',
     alignItems: 'center',
+    cursor: 'pointer',
 };
 
 export const flexColumnGrow = {

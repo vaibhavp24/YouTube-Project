@@ -9,6 +9,7 @@ import Upload from './Upload'
 import NotificationsList from './NotificationsList'
 import UserProfile from './UserProfile'
 import { useNavigate } from 'react-router-dom'
+import { logo } from '../styles/NavbarStyle'
 
 /* All the functionalities present in the navbar are described in Navbar component */
 
@@ -18,20 +19,20 @@ const Navbar = ({ setAuth }) => {
         <AppBar component='nav' sx={appBar}>
             <Toolbar>
                 <Box sx={toolbarWrapper}>
-                    <Box sx={flexAlignCenter}>
-                        <Box display={flex} onClick={() => navigate('/')} sx={{ cursor: 'pointer', alignItems: 'center' }}>
-                            {/* Youtube logo */}
-                            <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='28vh' width='35vh' />
-                            <Typography fontFamily={'sans-serif'} variant='h6' component="div" sx={{ fontSize: 22, ml: 1, fontFamily: 'Oswald', cursor: 'pointer' }}>
-                                YouTube
-                            </Typography>
-                        </Box>
+                    <Box sx={flexAlignCenter} width='1rem' onClick={() => navigate('/')}>
+                        {/* <Box display={flex} onClick={() => navigate('/')} sx={{ cursor: 'pointer', alignItems: 'center' }}> */}
+                        {/* Youtube logo */}
+                        <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='28vh' width='35vh' />
+                        <Typography variant='h6' component="div" sx={logo}>
+                            YouTube
+                        </Typography>
+                        {/* </Box> */}
                     </Box>
-                    <Box sx={{ width: '40%' }}>
+                    <Box width='5%' sx={hideOnMobile}>
                         {/* Search Bar */}
                         <Search />
                     </Box>
-                    <Box justifyContent='center' sx={hideOnMobile}>
+                    <Box sx={flexAlignCenter}>
                         {/* here Upload , NotificationList and UserProfile components are made to look this as original Youtube website 
                         and were not mentioned in the guidelines */}
                         {/* Upload video section */}

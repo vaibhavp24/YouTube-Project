@@ -1,21 +1,17 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AiFillYoutube } from 'react-icons/ai'
-import { useEffect } from 'react';
 import { useState } from 'react';
 import Alert from '@mui/material/Alert';
+import { registerBox, resgiterButton } from '../styles/SignInFormStyle';
 
 const defaultTheme = createTheme();
 
@@ -64,14 +60,7 @@ export default function SignInForm({ setAuth, setShowSignin }) {
         <ThemeProvider theme={defaultTheme}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
-                <Box
-                    sx={{
-                        marginTop: 8,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
-                >
+                <Box sx={registerBox}>
                     <AiFillYoutube icon="fa-brands fa-youtube" size='9vh' style={{ color: "#ff0000", }} />
                     <Typography component="h1" variant="h5">
                         YouTube Sign in
@@ -105,7 +94,7 @@ export default function SignInForm({ setAuth, setShowSignin }) {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ mt: 3, mb: 2, backgroundColor: '#E31212' }}
+                            sx={resgiterButton}
                         >
                             Sign In
                         </Button>

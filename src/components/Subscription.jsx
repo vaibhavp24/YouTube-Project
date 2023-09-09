@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { headTypo, subscriptionBox } from '../styles/Subscription';
 
 const defaultTheme = createTheme();
 
@@ -19,16 +20,11 @@ export default function Subscription() {
             <Container component="main" maxWidth="sm">
                 <CssBaseline />
                 <Box
-                    sx={{
-                        marginTop: 10,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
+                    sx={subscriptionBox}
                 >
                     <Box display='flex' flexDirection='row' alignItems='center'>
                         <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg" alt="youtube" height='50vh' />
-                        <Typography fontWeight={800} fontFamily='Arial Narrow' variant="h4" alignItems='center' >
+                        <Typography fontWeight={800} variant='h4' sx={headTypo} >
                             YouTube Premium
                         </Typography>
                     </Box>
@@ -44,6 +40,7 @@ export default function Subscription() {
                             <Button
                                 type="submit"
                                 variant="contained"
+                                onClick={(e) => { e.preventDefault() }}
                                 sx={{ mt: 3, mb: 2, backgroundColor: '#3ea6ff', color: 'black' }}
                             >
                                 Get Youtube Premium

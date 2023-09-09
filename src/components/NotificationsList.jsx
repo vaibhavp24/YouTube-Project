@@ -12,11 +12,10 @@ const NotificationsList = () => {
     const { el, open, handleClick, handleClose } = UseToggle()
     return (
         <Box sx={{ px: 1 }}>
-            <Button id='basic-button' onClick={handleClick}>
+            <Button onClick={handleClick}>
                 <BsBellFill size={24} />
             </Button>
             <Menu
-                id='basic-notification-menu'
                 anchorEl={el}
                 open={open}
                 onClose={handleClose}

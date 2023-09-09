@@ -30,6 +30,7 @@ const CallHomePage = ({ auth, setAuth }) => {
 
     /* this component is use to call the components used for making HomePage
      with Routing as well */
+     
     return (
         <BrowserRouter>
             <Box sx={appWrapper}>

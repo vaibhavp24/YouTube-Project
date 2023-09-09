@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { updateButton, updatePassBox } from '../styles/UpdatePasswordStyle';
 
 const defaultTheme = createTheme();
 
@@ -66,18 +67,7 @@ export default function UpdatePasswordForm() {
         <ThemeProvider theme={defaultTheme}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
-                <Box
-                    sx={{
-                        marginTop: 10,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        backgroundColor: '#e6f3ff',
-                        padding: '20px',
-                        border: '2px dark solid',
-                        borderRadius: '4px'
-                    }}
-                >
+                <Box sx={updatePassBox}>
                     <Typography component="h1" variant="h5" color='black'>
                         YouTube Update Password
                     </Typography>
@@ -127,7 +117,7 @@ export default function UpdatePasswordForm() {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ mt: 3, mb: 2 }}
+                            sx={updateButton}
                         >
                             Update Password
                         </Button>
