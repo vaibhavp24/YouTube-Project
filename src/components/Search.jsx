@@ -18,7 +18,7 @@ const Search = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (searchTerm) {
-            navigate(`/search/${field}/${searchTerm}`);
+            navigate(`/search/type/${searchTerm}`);
             setSearchTerm('');
         }
     };
@@ -43,21 +43,6 @@ const Search = () => {
                     <SearchIcon />
                 </IconButton >
             </Paper>
-            <Box display={'flex'} gap={1} width='15%' alignItems='center'>
-                <Typography>Filter By</Typography>
-                {/* dropdown for selecting field */}
-                <Select
-                    value={field}
-                    sx={select}
-                    label="Age"
-                    onChange={handleChange}
-                >
-                    <MenuItem value={'type'}>Type</MenuItem>
-                    <MenuItem value={'title'}>Title</MenuItem>
-                    <MenuItem value={'keywords'}>Keywords</MenuItem>
-                    <MenuItem value={'cast'}>Cast</MenuItem>
-                </Select>
-            </Box>
         </Box>
     )
 }
